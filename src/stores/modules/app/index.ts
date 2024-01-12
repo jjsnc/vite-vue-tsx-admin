@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { AppTheme } from '@/types/constants'
 
-console.log(AppTheme,'AppTheme')
 
 export type AppState = {
   theme: AppTheme

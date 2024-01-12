@@ -1,10 +1,10 @@
 import { ConfigProvider } from '@arco-design/web-vue'
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, watch } from "vue";
 import { RouterView } from 'vue-router'
 
 import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
-import { LocaleOptions } from './types/constants'
+import { AppTheme, LocaleOptions } from './types/constants'
 import { useAppStore } from './stores'
 import useLocale from './hooks/locale'
 
@@ -30,8 +30,16 @@ export default defineComponent({
         })
 
 
-
-        console.log(useLocale(), 'useLocale currentLocale')
+        watch(
+            () => appStore.theme,
+            (theme) => {
+                if (theme === AppTheme.dark) {
+                    document.body.setAttribute('arco-theme', AppTheme.dark)
+                } else {
+                    document.body.removeAttribute('arco-theme')
+                }
+            }
+        )
 
 
         return () => {
