@@ -7,7 +7,7 @@ import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 import { AppTheme, LocaleOptions } from './types/constants'
 import { useAppStore } from './stores'
 import useLocale from './hooks/locale'
-
+import { generate, getRgbStr } from '@arco-design/color'
 export default defineComponent({
     name: 'app',
     setup() {
@@ -40,6 +40,24 @@ export default defineComponent({
                 }
             }
         )
+
+
+        watch(
+            () => appStore.themeColor,
+            (newColor) => {
+              const newList = generate(newColor, {
+                list: true,
+                dark: appStore.isDark
+              })
+              newList.forEach((l: any, index: number) => {
+                const rgbStr = getRgbStr(l);
+                document.body.style.setProperty(`--arcoblue-${index + 1}`, rgbStr)
+              })
+            },
+            {
+              immediate: true
+            }
+          )
 
 
         return () => {
