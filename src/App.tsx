@@ -38,26 +38,39 @@ export default defineComponent({
                 } else {
                     document.body.removeAttribute('arco-theme')
                 }
+            },
+            {
+                immediate: true
             }
         )
-            
+
 
         watch(
             () => appStore.themeColor,
             (newColor) => {
-              const newList = generate(newColor, {
-                list: true,
-                dark: appStore.isDark
-              })
-              newList.forEach((l: any, index: number) => {
-                const rgbStr = getRgbStr(l);
-                document.body.style.setProperty(`--arcoblue-${index + 1}`, rgbStr)
-              })
+                const newList = generate(newColor, {
+                    list: true,
+                    dark: appStore.isDark
+                })
+                newList.forEach((l: any, index: number) => {
+                    const rgbStr = getRgbStr(l);
+                    document.body.style.setProperty(`--arcoblue-${index + 1}`, rgbStr)
+                })
             },
             {
-              immediate: true
+                immediate: true
             }
-          )
+        )
+
+        watch(
+            () => appStore.colorWeak,
+            (colorWeak: boolean) => {
+                document.body.style.filter = colorWeak ? 'invert(80%)' : 'none'
+            },
+            {
+                immediate: true
+            }
+        )
 
 
         return () => {
