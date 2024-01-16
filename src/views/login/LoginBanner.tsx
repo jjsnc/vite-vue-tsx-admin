@@ -28,7 +28,28 @@ export default defineComponent({
         ])
         return () => (
             <Carousel class="h-full" animationName="fade">
-
+                {
+                    dataList.value.map(item => {
+                        return (
+                            <Carousel.Item>
+                            <div class="flex  justify-center items-center  flex-col  h-full">
+                              <div
+                                class="text-[color:var(--color-fill-1)]
+                               font-medium
+                                text-xl
+                              "
+                              >
+                                {item.slogan}
+                              </div>
+                              <div class={['text-[color:var(--color-text-3)]', 'mt-2', 'text-sm']}>
+                                {item.subSlogan}
+                              </div>
+                              <img class={['w-80', 'mt-7']} src={item.image} alt="banner-image" />
+                            </div>
+                          </Carousel.Item>
+                        )
+                    })
+                }
             </Carousel>
         )
     }
