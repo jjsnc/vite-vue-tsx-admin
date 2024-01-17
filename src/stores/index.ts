@@ -1,13 +1,13 @@
-import { createPinia } from "pinia";
+import { createPinia } from 'pinia'
 
-
-import useAppStore from './modules/app';
+import useAppStore from './modules/app'
+import useUserStore from './modules/user'
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-const pinia = createPinia();
+const pinia = createPinia()
 
-pinia.use(piniaPluginPersistedstate);
+pinia.use(piniaPluginPersistedstate)
 
-export { useAppStore }
+export { useAppStore, useUserStore }
 export default pinia

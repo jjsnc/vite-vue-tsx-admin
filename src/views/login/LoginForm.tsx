@@ -1,3 +1,5 @@
+import { type LoginData } from '@/api/user'
+
 import { defineComponent } from "vue";
 
 
