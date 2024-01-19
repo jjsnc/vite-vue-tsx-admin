@@ -8,7 +8,7 @@ import App from './App'
 import router from './router'
 import store from '@/stores/index'
 import i18n from './locale'
-
+import '@/mock'
 const app = createApp(App)
 
 app.use(i18n)
