@@ -1,22 +1,22 @@
 import { login, logout, type LoginData } from '@/api/user'
 import { useUserStore } from '@/stores'
-import { setToken, clearToken } from '@/utils/token'
+import { clearToken, setToken } from '@/utils/token'
 import { removeRouteListener } from '@/utils/routerListener'
-
 /**
- * @desc system authentication
  *
+ * @desc system authentication
  */
 export default function useAuth() {
   const loginApp = async (data: LoginData) => {
     try {
       const res = await login(data)
       setToken(res.data.token)
-    } catch (error) {
+    } catch (err) {
       clearToken()
-      throw error
+      throw err
     }
   }
+
   const logoutApp = async () => {
     const userStore = useUserStore()
     const afterLogout = () => {
@@ -30,7 +30,6 @@ export default function useAuth() {
       afterLogout()
     }
   }
-
   return {
     loginApp,
     logoutApp

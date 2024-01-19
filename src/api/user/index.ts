@@ -1,4 +1,5 @@
-import axios from 'axios'
+
+import instance from '@/utils/http' 
 import type {
   LatestActivity,
   LoginData,
@@ -25,37 +26,37 @@ export type {
 }
 
 export function getUerInfo() {
-  return axios.post<UserInfo>('/api/user/info')
+  return instance.post<UserInfo>('/api/user/info')
 }
 
 export function login(data: LoginData) {
-  return axios.post<LoginRes>('/api/user/login', data)
+  return instance.post<LoginRes>('/api/user/login', data)
 }
 
 export function logout() {
-  return axios.post<LoginRes>('/api/user/logout')
+  return instance.post<LoginRes>('/api/user/logout')
 }
 
 export function userUploadApi(data: FormData) {
-  return axios.post<OKResponse>('/api/user/upload', data)
+  return instance.post<OKResponse>('/api/user/upload', data)
 }
 
 export function queryMyProjectList() {
-  return axios.post<ProjectItem[]>('/api/user/my-team/list')
+  return instance.post<ProjectItem[]>('/api/user/my-team/list')
 }
 
 export function queryLatestActivity() {
-  return axios.post<LatestActivity[]>('/api/user/latest-activity')
+  return instance.post<LatestActivity[]>('/api/user/latest-activity')
 }
 
 export function saveUserInfo() {
-  return axios.post<OKResponse>('/api/user/save-info')
+  return instance.post<OKResponse>('/api/user/save-info')
 }
 
 export function queryCertification() {
-  return axios.post<UnitCertification>('/api/user/certification')
+  return instance.post<UnitCertification>('/api/user/certification')
 }
 
 export function requestSwitchRole() {
-  return axios.post<RoleRes>('/api/user/switch-user-role')
+  return instance.post<RoleRes>('/api/user/switch-user-role')
 }
