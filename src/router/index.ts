@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { ViewNames } from '@/types/constants'
+import configRouteGuard from './guard'
 
 import { appRoutes } from './routes'
 import NProgress from 'nprogress' // progress bar
@@ -26,5 +27,5 @@ const router = createRouter({
     }
   ]
 })
-
+configRouteGuard(router)
 export default router
