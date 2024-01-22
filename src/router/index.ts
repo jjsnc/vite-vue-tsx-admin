@@ -1,10 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { ViewNames } from '@/types/constants'
 
 import { appRoutes } from './routes'
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css'
+NProgress.configure({ showSpinner: false })
+
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
