@@ -41,7 +41,5 @@ export default function setupUserLoginInfoGuard(router: Router) {
         name: ViewNames.login
       })
     }
-
-    console.log('我是路由跳转之前的拦截')
   })
 }
