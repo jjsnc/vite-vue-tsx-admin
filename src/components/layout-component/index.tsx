@@ -20,6 +20,7 @@ export default defineComponent({
         return () => (
             <div>
                 layout
+                 <BreadcrumbComponent></BreadcrumbComponent>
                 <RouterView></RouterView>
             </div>
         )

@@ -19,10 +19,9 @@ export default defineComponent({
                     <Breadcrumb.Item>
                         <IconApps />
                     </Breadcrumb.Item>
-                    {route.matched.map((item) => {
+                    {route.matched.map((item) => (
                         <Breadcrumb.Item>{t(item.meta.locale + '')}</Breadcrumb.Item>
-                    })}
-
+                    ))}
                 </Breadcrumb>
 
             </div>
