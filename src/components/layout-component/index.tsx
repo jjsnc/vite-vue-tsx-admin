@@ -3,7 +3,7 @@ import { ViewNames, layoutStyleConfig } from '@/types/constants'
 import { Layout } from '@arco-design/web-vue'
 import { computed, defineComponent, watch } from 'vue'
 import BreadcrumbComponent from './BreadcrumbComponent'
-
+import FooterComponent from './FooterComponent'
 
 
 
@@ -20,7 +20,8 @@ export default defineComponent({
         return () => (
             <div>
                 layout
-                 <BreadcrumbComponent></BreadcrumbComponent>
+                <BreadcrumbComponent></BreadcrumbComponent>
+                <FooterComponent></FooterComponent>
                 <RouterView></RouterView>
             </div>
         )
