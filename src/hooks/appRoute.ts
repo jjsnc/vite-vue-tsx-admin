@@ -48,6 +48,8 @@ export const firstPermissionRoute = {
   fullPath: '/dashboard/workplace'
 }
 
+
+
 export default function useAppRoute() {
   const permission = usePermission()
   const appRouteData = computed(() => {
@@ -109,6 +111,7 @@ export default function useAppRoute() {
         nodeList.push(menuNode)
       }
     }
+    console.log(nodeList,'nodeList')
     return { tree: nodeList, map: _map }
   })
 
