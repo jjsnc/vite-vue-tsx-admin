@@ -5,7 +5,7 @@ import { computed, defineComponent, watch } from 'vue'
 import BreadcrumbComponent from './BreadcrumbComponent'
 import FooterComponent from './FooterComponent'
 import MenuComponent from './MenuComponent'
-
+import Navbar from './Navbar'
 
 
 
@@ -23,6 +23,7 @@ export default defineComponent({
                 <BreadcrumbComponent></BreadcrumbComponent>
                 <FooterComponent></FooterComponent>
                 <MenuComponent></MenuComponent>
+                <Navbar></Navbar>
                 <RouterView></RouterView>
             </div>
         )
