@@ -19,10 +19,9 @@ export default defineComponent({
     setup() {
         return () => (
             <div>
-                layout
-                <BreadcrumbComponent></BreadcrumbComponent>
+                {/* <BreadcrumbComponent></BreadcrumbComponent>
                 <FooterComponent></FooterComponent>
-                <MenuComponent></MenuComponent>
+                <MenuComponent></MenuComponent> */}
                 <Navbar></Navbar>
                 <RouterView></RouterView>
             </div>
