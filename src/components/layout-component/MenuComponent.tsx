@@ -13,12 +13,12 @@ export default defineComponent({
         const { t } = useI18n()
         const router = useRouter()
         const { appRouteData } = useAppRoute()
-        console.log(appRouteData.value.tree, 'appRouteData.value.tree')
+        const appStore = useAppStore()
         const openKeys = ref<string[]>([])
         const selectedKey = ref<string[]>([])
         const renderMenuContent = () => {
             const traverse = (routeList: any) => {
-                let list = []
+                const list = []
                 for (let i = 0; i < routeList.length; i++) {
                     const route = routeList[i]
                     if (route.chileren == undefined) {
@@ -34,12 +34,15 @@ export default defineComponent({
                                     title: () => t(route.locale)
                                 }}
                             >
+                                {traverse(route.chileren)}
 
                             </Menu.SubMenu>
                         )
                     }
 
                 }
+                return list
+
             }
 
             return traverse(appRouteData.value.tree)
@@ -49,8 +52,31 @@ export default defineComponent({
                 name: item.name
             })
         }
+        listenerRouteChange((newRoute) => {
+            if (newRoute.name) {
+                const appRoute = appRouteData.value.map[newRoute.name]
+                if (appRoute) {
+                    const namePath = appRoute.namePath
+                    openKeys.value = Array.from(new Set([...namePath, ...openKeys.value]))
+                    const stackTopName = namePath[namePath.length - 1]
+                    selectedKey.value = [stackTopName]
+                }
+            }
+
+        }, true)
         return () => (
-            <div>123</div>
+           <Menu
+           v-mode:collapsed={appStore.menuCollapse}
+           v-model:open-keys={openKeys.value}
+           selected-keys={selectedKey.value}
+           mode="vertical"
+           auto-open={false}
+           auto-open-selected={true}
+           level-indent={34}
+           class={['w-full', 'h-full']}
+           >
+            {renderMenuContent()}
+           </Menu>
         )
     }
 })
