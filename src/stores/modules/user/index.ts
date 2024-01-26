@@ -34,6 +34,7 @@ export default defineStore('userStore', {
         const res = await requestSwitchRole()
         const role = res.data.role
         this.role = role
+        return role
       } catch (e) {
         /* empty */
       }
