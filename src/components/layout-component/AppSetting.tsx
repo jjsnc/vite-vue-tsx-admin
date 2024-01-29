@@ -39,7 +39,6 @@ export default defineComponent({
       <>
         {!appStore.navbar && (
           <div class={['fixed', 'top-72', 'right-0']}>
-            1111
             <Button type="primary" onClick={() => (appStore.settingVisible = true)}>
               {{
                 icon() {
