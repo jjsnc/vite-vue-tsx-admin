@@ -6,8 +6,8 @@ import BreadcrumbComponent from './BreadcrumbComponent'
 import FooterComponent from './FooterComponent'
 import MenuComponent from './MenuComponent'
 import Navbar from './Navbar'
-
-
+import styles from './style.module.scss'
+import AppSetting from './AppSetting'
 
 
 import { RouterView } from 'vue-router'
@@ -23,6 +23,7 @@ export default defineComponent({
                 <FooterComponent></FooterComponent>
                 <MenuComponent></MenuComponent> */}
                 <Navbar></Navbar>
+                <AppSetting></AppSetting>
                 <RouterView></RouterView>
             </div>
         )
