@@ -10,7 +10,7 @@ import PageComponent from './PageComponent'
 import styles from './style.module.scss'
 import AppSetting from './AppSetting'
 import usePermission from '@/hooks/permission'
-import RouterView, { useRoute, useRouter, } from 'vue-router'
+import  { useRoute, useRouter, } from 'vue-router'
 import TabBar from './TabBar'
 
 
@@ -74,7 +74,7 @@ export default defineComponent({
                         </Layout>
                     </Layout>
                 </Layout>
-
+            <AppSetting></AppSetting>
             </>
 
         )
