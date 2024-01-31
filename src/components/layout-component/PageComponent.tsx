@@ -11,9 +11,9 @@ export default defineComponent({
     name: 'PageComponent',
     setup() {
         const tabStore = useTabStore()
-        return (
+        return ()=> (
             <RouterView>
-                {({ Component, route }: { Component: VNode; route: RouteLocationNormalizedLoaded }) => {
+                {({ Component, route }: { Component: VNode; route: RouteLocationNormalizedLoaded }) => (
                     <Transition appear>
                         {
                             get(route, 'meta.ignoreCache') === true ? (Component) : (
@@ -21,7 +21,7 @@ export default defineComponent({
                             )
                         }
                     </Transition>
-                }}
+                )}
             </RouterView>
         )
     }
