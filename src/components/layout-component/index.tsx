@@ -6,6 +6,7 @@ import BreadcrumbComponent from './BreadcrumbComponent'
 import FooterComponent from './FooterComponent'
 import MenuComponent from './MenuComponent'
 import Navbar from './Navbar'
+import PageComponent from './PageComponent'
 import styles from './style.module.scss'
 import AppSetting from './AppSetting'
 import usePermission from '@/hooks/permission'
@@ -64,8 +65,11 @@ export default defineComponent({
                             </Layout.Sider>
                         )}
                         <Layout class={[styles.maim]} style={paddingStyle.value}>
-                           <TabBar></TabBar>
-                           <BreadcrumbComponent class={['px-5']} />
+                            <TabBar></TabBar>
+                            <BreadcrumbComponent class={['px-5']} />
+                            <Layout.Content>
+                                <PageComponent class={['px-5']} />
+                            </Layout.Content>
                         </Layout>
                     </Layout>
                 </Layout>

@@ -8,8 +8,8 @@ export default defineComponent({
     name: ViewNames.login,
     setup() {
         
-        return ()=>{
+        return ()=>(
             <div>123</div>
-        }
+            )
     }
 })
