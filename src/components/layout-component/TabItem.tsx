@@ -19,7 +19,7 @@ import { useI18n } from 'vue-i18n';
 
 import { useRoute, useRouter } from 'vue-router'
 
-import styles from './styles.modules.css'
+import styles from './style.module.scss'
 import { ObjectFlags } from 'typescript';
 
 
@@ -90,18 +90,18 @@ export default defineComponent({
                 case TabActionType.left: {
                     const currentRouteIdx = findCurrentRouteIndex()
                     const replaceList = cloneDeep(tabList.value).splice(props.index)
-                    tabStore.freshTabList([defaultTab, ...replaceList]);
+                    tabStore.freshTabList([defaultTab, ...replaceList])
                     if (currentRouteIdx < props.index) {
                         router.push({ path: props.itemData.fullPath })
                     }
+
                     break
                 }
-
                 case TabActionType.right: {
                     const currentRouteIdx = findCurrentRouteIndex()
                     const replaceList = cloneDeep(tabList.value).splice(0, props.index + 1)
-                    tabStore.freshTabList([defaultTab, ...replaceList]);
-                    if (currentRouteIdx < props.index) {
+                    tabStore.freshTabList(replaceList)
+                    if (currentRouteIdx > props.index) {
                         router.push({ path: props.itemData.fullPath })
                     }
                     break
@@ -113,32 +113,89 @@ export default defineComponent({
                             path: route.fullPath
                         }
                     })
+                    break
                 }
-
-
-
-
-
+                case TabActionType.current: {
+                    handleTabClose()
+                    break
+                }
+                default:
+                    break
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        const disabledRight = computed(() => {
+            return props.index === tabStore.tabList.length - 1
+        })
+        const disabledReload = computed(() => {
+            return props.index !== findCurrentRouteIndex()
+        })
+        const disabledLeft = computed(() => {
+            return [0, 1].includes(props.index)
+        })
+        const shouldClose = computed(() => props.index !== 0)
+        const tagChecked = computed(() => props.itemData.name === route.name)
         return () => (
-            <div>
-                123456
-            </div>
+            <Dropdown onSelect={handleSelect} trigger="contextMenu" popupMaxHeight={false}>
+                {{
+                    default: () => (
+                        <span
+                            class={[
+                                'arco-tag',
+                                'arco-tag-size-medium',
+                                'arco-tag-checked',
+                                'cursor-pointer',
+                                'mr-2',
+                                tagChecked.value && styles['link-activated']
+                            ]}
+                            onClick={handleTabClick}
+                        >
+                            <span class={styles['tag-link']}>{t(props.itemData.title)}</span>
+                            {shouldClose.value && (
+                                <span
+                                    class="arco-icon-hover arco-tag-icon-hover arco-icon-hover-size-medium arco-tag-close-btn"
+                                    onClick={withModifiers(handleTabClose, ['stop'])}
+                                >
+                                    <icon-close />
+                                </span>
+                            )}
+                        </span>
+                    ),
+                    content: () => (
+                        <>
+                            <Doption disabled={disabledReload.value} value={TabActionType.reload}>
+                                <IconRefresh />
+                                <span>重新加载</span>
+                            </Doption>
+
+                            <Doption value={TabActionType.current}>
+                                <IconClose />
+                                <span>关闭当前标签页</span>
+                            </Doption>
+
+                            <Doption disabled={disabledLeft.value} value={TabActionType.left}>
+                                <IconToLeft />
+                                <span>关闭左侧标签页</span>
+                            </Doption>
+
+                            <Doption disabled={disabledRight.value} value={TabActionType.right}>
+                                <IconToRight />
+                                <span>关闭右侧标签页</span>
+                            </Doption>
+
+                            <Doption value={TabActionType.others}>
+                                <IconSwap />
+                                <span>关闭其他标签页</span>
+                            </Doption>
+
+                            <Doption value={TabActionType.all}>
+                                <IconFolderDelete />
+                                <span>关闭全部标签页</span>
+                            </Doption>
+                        </>
+                    )
+                }}
+
+            </Dropdown>
         )
     }
 })
