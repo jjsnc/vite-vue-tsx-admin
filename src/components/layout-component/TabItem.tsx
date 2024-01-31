@@ -1,6 +1,6 @@
 import { useTabStore } from '@/stores'
 import { defaultTab, type TabItem } from '@/stores/modules/tab'
-import { ViewNames } from '@/types/constants';
+import { ViewNames } from '@/types/constants'
 import { Doption, Dropdown } from '@arco-design/web-vue'
 import {
     IconClose,
@@ -10,19 +10,11 @@ import {
     IconToLeft,
     IconToRight
 } from '@arco-design/web-vue/es/icon'
-import { cloneDeep } from 'lodash';
-
-
-import { defineComponent, computed, withModifiers, type PropType } from "vue";
-
-import { useI18n } from 'vue-i18n';
-
+import { cloneDeep } from 'lodash'
+import { computed, defineComponent, withModifiers, type PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
-
 import styles from './style.module.scss'
-import { ObjectFlags } from 'typescript';
-
-
 enum TabActionType {
     reload = 'reload',
     current = 'current',
@@ -30,10 +22,7 @@ enum TabActionType {
     right = 'right',
     others = 'others',
     all = 'all'
-
 }
-
-
 export default defineComponent({
     name: 'TabItem',
     props: {
@@ -58,13 +47,11 @@ export default defineComponent({
         const findCurrentRouteIndex = () => {
             return tabList.value.findIndex((el) => el.name === route.name)
         }
-
         const handleTabClick = () => {
             router.push({
                 path: props.itemData.fullPath
             })
         }
-
         const handleTabClose = () => {
             tabStore.deleteTab(props.itemData.name as ViewNames)
             if (props.itemData.name === route.name) {
@@ -123,6 +110,7 @@ export default defineComponent({
                     break
             }
         }
+
         const disabledRight = computed(() => {
             return props.index === tabStore.tabList.length - 1
         })
@@ -137,6 +125,7 @@ export default defineComponent({
         return () => (
             <Dropdown onSelect={handleSelect} trigger="contextMenu" popupMaxHeight={false}>
                 {{
+                    // argo tag exist bug,so use div
                     default: () => (
                         <span
                             class={[
@@ -155,7 +144,7 @@ export default defineComponent({
                                     class="arco-icon-hover arco-tag-icon-hover arco-icon-hover-size-medium arco-tag-close-btn"
                                     onClick={withModifiers(handleTabClose, ['stop'])}
                                 >
-                                    <icon-close />
+                                    <IconClose />
                                 </span>
                             )}
                         </span>
@@ -194,7 +183,6 @@ export default defineComponent({
                         </>
                     )
                 }}
-
             </Dropdown>
         )
     }

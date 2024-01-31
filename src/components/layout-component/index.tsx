@@ -10,6 +10,7 @@ import styles from './style.module.scss'
 import AppSetting from './AppSetting'
 import usePermission from '@/hooks/permission'
 import RouterView, { useRoute, useRouter, } from 'vue-router'
+import TabBar from './TabBar'
 
 
 
@@ -62,8 +63,10 @@ export default defineComponent({
                                 <MenuComponent></MenuComponent>
                             </Layout.Sider>
                         )}
-                      
-
+                        <Layout class={[styles.maim]} style={paddingStyle.value}>
+                           <TabBar></TabBar>
+                           <BreadcrumbComponent class={['px-5']} />
+                        </Layout>
                     </Layout>
                 </Layout>
 
