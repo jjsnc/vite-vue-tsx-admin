@@ -21,7 +21,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 import styles from './styles.modules.css'
 import { ObjectFlags } from 'typescript';
-import console from 'console';
+
 
 enum TabActionType {
     reload = 'reload',
