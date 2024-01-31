@@ -70,6 +70,7 @@ export default defineComponent({
                             <Layout.Content>
                                 <PageComponent class={['px-5']} />
                             </Layout.Content>
+                            <FooterComponent />
                         </Layout>
                     </Layout>
                 </Layout>
