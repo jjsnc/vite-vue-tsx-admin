@@ -1,7 +1,9 @@
 import { defineComponent } from "vue";
-import { Spin, Card } from '@arco-design/web-vue'
+import { Spin, Card, Link } from '@arco-design/web-vue'
 import useLoading from '@/hooks/loading'
 import { useI18n } from 'vue-i18n'
+import ChartComponent from "@/components/chart-component";
+
 export default defineComponent({
     name: 'ContentChar',
     setup() {
@@ -12,7 +14,11 @@ export default defineComponent({
                 <Card
                     bordered={false}
                     title={t('workplace.contentData')}
+                    v-slots={{
+                        extra: () => <Link>{t('workplace.viewMore')}</Link>
+                    }}
                 >
+                   <ChartComponent />
 
                 </Card>
             </Spin>
