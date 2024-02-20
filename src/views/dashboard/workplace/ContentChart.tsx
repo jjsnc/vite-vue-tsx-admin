@@ -2,7 +2,7 @@ import { defineComponent } from "vue";
 import { Spin, Card, Link } from '@arco-design/web-vue'
 import useLoading from '@/hooks/loading'
 import { useI18n } from 'vue-i18n'
-import ChartComponent from "@/components/chart-component";
+import ChartComponent from '@/components/chart-component'
 
 export default defineComponent({
     name: 'ContentChar',
