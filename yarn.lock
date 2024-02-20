@@ -761,7 +761,7 @@
   dependencies:
     "@vue/shared" "3.4.9"
 
-"@vue/runtime-core@3.4.9":
+"@vue/runtime-core@^3.0.0", "@vue/runtime-core@3.4.9":
   version "3.4.9"
   resolved "https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.4.9.tgz"
   integrity sha512-+LDblIs/lgEKRczBFfaX/Se8UIHucVnXoBA49VnZSeK8WXG1B5Ha7vuWiekCEk7yYEParYqsy8VetHxruLJXPA==
@@ -1188,6 +1188,14 @@ eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmmirror.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
+
+echarts@^5.4.1:
+  version "5.5.0"
+  resolved "https://registry.npmjs.org/echarts/-/echarts-5.5.0.tgz"
+  integrity sha512-rNYnNCzqDAPCr4m/fqyUFv7fD9qIsd50S6GDFgO1DxZhncCsNsG7IfUlAlvZe5oSEQxtsjnHiUuppzccry93Xw==
+  dependencies:
+    tslib "2.3.0"
+    zrender "5.5.0"
 
 electron-to-chromium@^1.4.601:
   version "1.4.628"
@@ -2250,6 +2258,11 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
+resize-detector@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/resize-detector/-/resize-detector-0.3.0.tgz"
+  integrity sha512-R/tCuvuOHQ8o2boRP6vgx8hXCCy87H1eY9V5imBYeVNyNVpuL9ciReSccLj2gDcax9+2weXy3bc8Vv+NRXeEvQ==
+
 resize-observer-polyfill@^1.5.1:
   version "1.5.1"
   resolved "https://registry.npmmirror.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz"
@@ -2589,6 +2602,11 @@ tslib@^2.6.2:
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
 
+tslib@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
+  integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.npmmirror.com/type-check/-/type-check-0.4.0.tgz"
@@ -2660,6 +2678,11 @@ validate-npm-package-license@^3.0.4:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vue-demi@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.13.11.tgz"
+  integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
+
 vue-demi@>=0.14.5:
   version "0.14.6"
   resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.6.tgz"
@@ -2669,6 +2692,14 @@ vue-demi@>=0.14.6:
   version "0.14.6"
   resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.6.tgz"
   integrity sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==
+
+vue-echarts@^6.6.9:
+  version "6.6.9"
+  resolved "https://registry.npmjs.org/vue-echarts/-/vue-echarts-6.6.9.tgz"
+  integrity sha512-mojIq3ZvsjabeVmDthhAUDV8Kgf2Rr/X4lV4da7gEFd1fP05gcSJ0j7wa7HQkW5LlFmF2gdCJ8p4Chas6NNIQQ==
+  dependencies:
+    resize-detector "^0.3.0"
+    vue-demi "^0.13.11"
 
 vue-eslint-parser@^9.3.1, vue-eslint-parser@^9.4.0:
   version "9.4.0"
@@ -2716,7 +2747,7 @@ vue-tsc@^1.8.25:
     "@vue/language-core" "1.8.27"
     semver "^7.5.4"
 
-"vue@^2.6.14 || ^3.3.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.1.0, vue@^3.2.0, vue@^3.2.25, vue@^3.3.11, vue@3.4.9:
+"vue@^2.6.12 || ^3.1.1", "vue@^2.6.14 || ^3.3.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.1.0, vue@^3.2.0, vue@^3.2.25, vue@^3.3.11, vue@3.4.9:
   version "3.4.9"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.4.9.tgz"
   integrity sha512-3Dc0cZqHIxvoKugWOTe6MCv8Hr+jQAumEyHEe/9ZPNiZvcHSP/HfiHZivqdO1hSeFtWLKa1iuyNTBRKSQhbxsA==
@@ -2781,3 +2812,10 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmmirror.com/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zrender@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.npmjs.org/zrender/-/zrender-5.5.0.tgz"
+  integrity sha512-O3MilSi/9mwoovx77m6ROZM7sXShR/O/JIanvzTwjN3FORfLSr81PsUGd7jlaYOeds9d8tw82oP44+3YucVo+w==
+  dependencies:
+    tslib "2.3.0"
