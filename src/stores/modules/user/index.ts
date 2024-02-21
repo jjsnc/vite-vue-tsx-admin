@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
-import { getUerInfo, requestSwitchRole, type UserInfo } from '@/api/user'
+import { getUserInfo, requestSwitchRole, type UserInfo } from '@/api/user'
+         
 
 export default defineStore('userStore', {
   state: (): UserInfo => ({
@@ -40,7 +41,7 @@ export default defineStore('userStore', {
       }
     },
     async refreshUserInfo() {
-      const res = await getUerInfo()
+      const res = await getUserInfo()
       this.setUserInfo(res.data)
     }
   }

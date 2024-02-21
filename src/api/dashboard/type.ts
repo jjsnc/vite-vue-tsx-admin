@@ -4,7 +4,6 @@ export type PopularRecord = {
   title: string
   increases: number
 }
-
 export type ContentDataRecord = {
   x: string
   y: number

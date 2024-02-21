@@ -3,7 +3,7 @@ import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
 import { useUserStore } from '@/stores'
 import { IconCaretUp } from '@arco-design/web-vue/es/icon'
-
+import ContentChart from './ContentChart'
 export default defineComponent({
     name: 'OverView',
     setup() {
@@ -99,6 +99,7 @@ export default defineComponent({
                         </Grid.Item>
                     ))}
                 </Grid>
+                <ContentChart />
             </Card>
 
         )
