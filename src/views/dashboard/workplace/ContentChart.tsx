@@ -14,6 +14,28 @@ export default defineComponent({
         const { t } = useI18n()
         const xAxis = ref<string[]>([])
         const chartsData = ref<number[]>([])
+        const fetchData = async () => {
+            try {
+                const { data: chartData } = await queryContentData()
+
+                chartData.forEach((el: ContentDataRecord, idx: number) => {
+                    xAxis.value.push(el.x)
+                    chartsData.value.push(el.y)
+                    if (idx === 0) {
+                        graphicElements.value[0].style.text = el.x
+                    }
+                    if (idx === chartData.length - 1) {
+                        graphicElements.value[1].style.text = el.x
+                    }
+                })
+            } catch (err) {
+                /* empty */
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchData();
         function graphicFactory(side: AnyObject) {
             return {
                 type: 'text',
@@ -156,28 +178,9 @@ export default defineComponent({
                 ]
             }
         })
+        console.log(chartOption.value,'123')
 
-        const fetchData = async () => {
-            try {
-                const { data: chartData } = await queryContentData()
 
-                chartData.forEach((el: ContentDataRecord, idx: number) => {
-                    xAxis.value.push(el.x)
-                    chartsData.value.push(el.y)
-                    if (idx === 0) {
-                        graphicElements.value[0].style.text = el.x
-                    }
-                    if (idx === chartData.length - 1) {
-                        graphicElements.value[1].style.text = el.x
-                    }
-                })
-            } catch (err) {
-                /* empty */
-            } finally {
-                setLoading(false)
-            }
-        }
-        fetchData();
         return () => (
             <Spin loading={loading.value} class="w-full">
                 <Card
@@ -187,7 +190,7 @@ export default defineComponent({
                         extra: () => <Link>{t('workplace.viewMore')}</Link>
                     }}
                 >
-                    <ChartComponent />
+                    <ChartComponent  height="410px" options={chartOption.value}  />
 
                 </Card>
             </Spin>

@@ -1,4 +1,4 @@
-import { Card, Typography, Divider, Grid, Space, Avatar,Statistic } from "@arco-design/web-vue";
+import { Card, Typography, Divider, Grid, Space, Avatar, Statistic } from "@arco-design/web-vue";
 import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
 import { useUserStore } from '@/stores'
