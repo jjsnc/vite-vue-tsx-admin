@@ -17,6 +17,7 @@ export default defineComponent({
         const fetchData = async () => {
             try {
                 const { data: chartData } = await queryContentData()
+            
 
                 chartData.forEach((el: ContentDataRecord, idx: number) => {
                     xAxis.value.push(el.x)
@@ -34,7 +35,6 @@ export default defineComponent({
                 setLoading(false)
             }
         }
-
         fetchData();
         function graphicFactory(side: AnyObject) {
             return {
