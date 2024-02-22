@@ -17,6 +17,7 @@ export default defineComponent({
         const fetchData = async () => {
             try {
                 const { data: chartData } = await queryContentData()
+                
             
 
                 chartData.forEach((el: ContentDataRecord, idx: number) => {
