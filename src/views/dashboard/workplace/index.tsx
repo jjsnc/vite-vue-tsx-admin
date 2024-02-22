@@ -4,6 +4,7 @@ import { ViewNames } from '@/types/constants'
 import { Space, Grid } from '@arco-design/web-vue'
 import OverView from './OverView'
 import PopularContents from '@/views/dashboard/workplace/PopularContents'
+import ContentPercentage from '@/views/dashboard/workplace/ContentPercentage'
 
 
 export default defineComponent({
@@ -20,7 +21,7 @@ export default defineComponent({
                                 <PopularContents></PopularContents>
                             </Grid.Col>
                             <Grid.Col span={12}>
-                                654321
+                                <ContentPercentage></ContentPercentage>
                             </Grid.Col>
                         </Grid.Row>
                     </Space>
