@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import { ViewNames } from '@/types/constants'
 import { Space, Grid } from '@arco-design/web-vue'
 import OverView from './OverView'
+import PopularContents from '@/views/dashboard/workplace/PopularContents'
 
 
 export default defineComponent({
@@ -16,7 +17,7 @@ export default defineComponent({
                         <OverView></OverView>
                         <Grid.Row gutter={16}>
                             <Grid.Col span={12}>
-                                123456
+                                <PopularContents></PopularContents>
                             </Grid.Col>
                             <Grid.Col span={12}>
                                 654321
