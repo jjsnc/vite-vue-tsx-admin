@@ -5,12 +5,11 @@ import { Space, Grid } from '@arco-design/web-vue'
 import OverView from './OverView'
 import PopularContents from '@/views/dashboard/workplace/PopularContents'
 import ContentPercentage from '@/views/dashboard/workplace/ContentPercentage'
-
+import RightTopArea from './RightTopArea'
 
 export default defineComponent({
     name: ViewNames.login,
     setup() {
-
         return () => (
             <div class='flex'>
                 <div class={['flex-1', 'overflow-hidden']}>
@@ -26,7 +25,11 @@ export default defineComponent({
                         </Grid.Row>
                     </Space>
                 </div>
-                <div class="w-72 ml-4">2</div>
+                <div class="w-72 ml-4">
+                    <Space size="medium" direction="vertical" fill>
+                        <RightTopArea></RightTopArea>
+                    </Space>
+                </div>
             </div>
         )
     }
