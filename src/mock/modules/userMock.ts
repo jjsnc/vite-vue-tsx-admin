@@ -10,7 +10,7 @@ setupMock({
       if (isLogin()) {
         const role = window.localStorage.getItem('data-base-role') || 'admin'
         return successResponseWrap({
-          name: '蔓越莓曲奇',
+          name: '飞流直下三千尺',
           avatar: 'https://cdn.jsdelivr.net/gh/manyuemeiquqi/my-image-bed/dist/54520846%20(1).jpg',
           email: '1486498123@email.com',
           job: 'frontend',

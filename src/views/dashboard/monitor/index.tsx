@@ -2,6 +2,7 @@ import { defineComponent } from 'vue'
 import { ViewNames } from '@/types/constants'
 import { Grid, Space } from '@arco-design/web-vue'
 import ChatPanel from './ChatPanel'
+import LivePanel from './LivePanel'
 
 export default defineComponent({
     name: ViewNames.login,
@@ -13,7 +14,7 @@ export default defineComponent({
                   <ChatPanel></ChatPanel>
                 </Grid.Col>
                 <Grid.Col flex={1}>
-                    中
+                     <LivePanel></LivePanel>
                 </Grid.Col>
                 <Grid.Col flex="280px">
                     右侧
