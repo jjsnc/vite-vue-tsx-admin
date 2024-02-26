@@ -62,6 +62,12 @@ export default defineComponent({
                         : chatData.value.map((item) => <MessageItem data={item} />)}
                 </div>
                 <Space>
+                    <Input>
+                        {{
+                            suffix: () => <IconFaceSmileFill></IconFaceSmileFill>
+                        }}
+                    </Input>
+                    <Button type="primary">{t('monitor.chat.update')}</Button>
 
                 </Space>
             </Card>
