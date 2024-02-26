@@ -6,6 +6,8 @@ import OverView from './OverView'
 import PopularContents from '@/views/dashboard/workplace/PopularContents'
 import ContentPercentage from '@/views/dashboard/workplace/ContentPercentage'
 import RightTopArea from './RightTopArea'
+import Announcement from './Announcement'
+import HelpDocs from './HelpDocs'
 
 export default defineComponent({
     name: ViewNames.login,
@@ -35,7 +37,7 @@ export default defineComponent({
                     <Space size="medium" direction="vertical" fill>
                         <RightTopArea></RightTopArea>
                         <Carousel
-                            class={['h-40', 'rounded', 'hidden']}
+                            class={['h-40', 'rounded', 'hiddenTest']}
                             indicatorType="slider"
                             showArrow="hover"
                             autoPlay
@@ -48,6 +50,8 @@ export default defineComponent({
                                 </Carousel.Item>
                             ))}
                         </Carousel>
+                        <Announcement />
+                        <HelpDocs />
                     </Space>
                 </div>
             </div>
