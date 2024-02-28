@@ -3,7 +3,7 @@ import { ViewNames } from '@/types/constants'
 import { Grid, Space } from '@arco-design/web-vue'
 import ChatPanel from './ChatPanel'
 import LivePanel from './LivePanel'
-import LiveStatus from './Livestatus'
+import LiveStatus from './LiveStatus'
 import QuickOperation from './QuickOperation'
 import LiveInformation from './LiveInformation'
 
