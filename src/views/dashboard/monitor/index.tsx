@@ -4,6 +4,9 @@ import { Grid, Space } from '@arco-design/web-vue'
 import ChatPanel from './ChatPanel'
 import LivePanel from './LivePanel'
 import LiveStatus from './Livestatus'
+import QuickOperation from './QuickOperation'
+import LiveInformation from './LiveInformation'
+
 export default defineComponent({
     name: ViewNames.login,
     setup() {
@@ -19,6 +22,8 @@ export default defineComponent({
                 <Grid.Col flex="280px">
                     <Space fill direction="vertical" size="medium">
                         <LiveStatus />
+                        <QuickOperation />
+                        <LiveInformation />
                     </Space>
                 </Grid.Col>
             </Grid.Row>
