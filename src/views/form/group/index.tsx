@@ -81,8 +81,228 @@ export default defineComponent({
                 <Form layout="vertical" model={formData.value} ref={formRef}>
                     <Space size="medium" direction="vertical">
                         <Card class="general-card" title={t('groupForm.title.video')}>
-
-                    
+                            <Grid.Row gutter={80}>
+                                <Grid.Col span={8}>
+                                    <Form.Item label={t('groupForm.form.label.video.mode')} field="video.mode">
+                                        <Select
+                                            v-model={formData.value.video.mode}
+                                            placeholder={t('groupForm.placeholder.video.mode')}
+                                        >
+                                            <Select.Option value="custom">自定义</Select.Option>
+                                            <Select.Option value="mode1">模式1</Select.Option>
+                                            <Select.Option value="mode2">模式2</Select.Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.acquisition.resolution')}
+                                        field="video.acquisition.resolution"
+                                    >
+                                        <Select
+                                            v-model={formData.value.video.acquisition.resolution}
+                                            placeholder={t('groupForm.placeholder.video.acquisition.resolution')}
+                                        >
+                                            <Select.Option value="resolution1">分辨率1</Select.Option>
+                                            <Select.Option value="resolution2">分辨率2</Select.Option>
+                                            <Select.Option value="resolution3">分辨率3</Select.Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.acquisition.frameRate')}
+                                        field="video.acquisition.frameRate"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.video.acquisition.frameRate}
+                                            placeholder={t('groupForm.placeholder.video.acquisition.frameRate')}
+                                            v-slots={{
+                                                append: () => 'fps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                            </Grid.Row>
+                            <Grid.Row gutter={80}>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.resolution')}
+                                        field="video.encoding.resolution"
+                                    >
+                                        <Select
+                                            v-model={formData.value.video.encoding.resolution}
+                                            placeholder={t('groupForm.placeholder.video.encoding.resolution')}
+                                        >
+                                            <Select.Option value="resolution1">分辨率1</Select.Option>
+                                            <Select.Option value="resolution2">分辨率2</Select.Option>
+                                            <Select.Option value="resolution3">分辨率3</Select.Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.rate.min')}
+                                        field="video.encoding.rate.min"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.video.encoding.rate.min}
+                                            placeholder={t('groupForm.placeholder.video.encoding.rate.min')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.rate.max')}
+                                        field="video.encoding.rate.max"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.video.encoding.rate.max}
+                                            placeholder={t('groupForm.placeholder.video.encoding.rate.max')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                            </Grid.Row>
+                            <Grid.Row gutter={80}>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.rate.default')}
+                                        field="video.encoding.rate.default"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.video.encoding.rate.default}
+                                            placeholder={t('groupForm.placeholder.video.encoding.rate.default')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.frameRate')}
+                                        field="video.encoding.frameRate"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.video.encoding.frameRate}
+                                            placeholder={t('groupForm.placeholder.video.encoding.frameRate')}
+                                            v-slots={{
+                                                append: () => 'fps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.video.encoding.profile')}
+                                        field="video.encoding.profile"
+                                    >
+                                        <Input
+                                            v-model={formData.value.video.encoding.profile}
+                                            placeholder={t('groupForm.placeholder.video.encoding.profile')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Card>
+                        <Card class="general-card" title={t('groupForm.title.audio')}>
+                            <Grid.Row gutter={80}>
+                                <Grid.Col span={8}>
+                                    <Form.Item label={t('groupForm.form.label.audio.mode')} field="audio.mode">
+                                        <Select
+                                            v-model={formData.value.audio.mode}
+                                            placeholder={t('groupForm.placeholder.audio.mode')}
+                                        >
+                                            <Select.Option value="custom">自定义</Select.Option>
+                                            <Select.Option value="mode1">模式1</Select.Option>
+                                            <Select.Option value="mode2">模式2</Select.Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.audio.acquisition.channels')}
+                                        field="audio.acquisition.channels"
+                                    >
+                                        <Select
+                                            v-model={formData.value.audio.acquisition.channels}
+                                            placeholder={t('groupForm.placeholder.audio.acquisition.channels')}
+                                        >
+                                            <Select.Option value={1}>1</Select.Option>
+                                            <Select.Option value={2}>2</Select.Option>
+                                            <Select.Option value={3}>3</Select.Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.audio.encoding.channels')}
+                                        field="audio.encoding.channels"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.audio.encoding.channels}
+                                            placeholder={t('groupForm.placeholder.audio.encoding.channels')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                            </Grid.Row>
+                            <Grid.Row gutter={80}>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.audio.encoding.rate')}
+                                        field="audio.encoding.rate"
+                                    >
+                                        <InputNumber
+                                            hideButton
+                                            v-model={formData.value.audio.encoding.rate}
+                                            placeholder={t('groupForm.placeholder.audio.encoding.rate')}
+                                            v-slots={{
+                                                append: () => 'bps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                                <Grid.Col span={8}>
+                                    <Form.Item
+                                        label={t('groupForm.form.label.audio.encoding.profile')}
+                                        field="audio.encoding.profile"
+                                    >
+                                        <Input
+                                            v-model={formData.value.audio.encoding.profile}
+                                            placeholder={t('groupForm.placeholder.audio.encoding.profile')}
+                                            v-slots={{
+                                                append: () => 'fps'
+                                            }}
+                                        />
+                                    </Form.Item>
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Card>
+                        <Card class="general-card" title={t('groupForm.title.explanation')}>
+                            <Form.Item label={t('groupForm.form.label.explanation')} field="audio.explanation">
+                                <Textarea
+                                    v-model={formData.value.audio.explanation}
+                                    placeholder={t('groupForm.placeholder.explanation')}
+                                />
+                            </Form.Item>
                         </Card>
                     </Space>
 
