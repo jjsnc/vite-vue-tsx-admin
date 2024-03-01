@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '@/utils/http'
 import type { BaseInfoModel, ChannelInfoModel, GroupFormModel } from './type'
 import type { OKResponse } from '@/types/global'
 export type { BaseInfoModel, ChannelInfoModel, GroupFormModel }

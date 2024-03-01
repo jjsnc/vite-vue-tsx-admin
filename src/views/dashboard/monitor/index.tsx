@@ -10,7 +10,6 @@ import LiveInformation from './LiveInformation'
 export default defineComponent({
     name: ViewNames.login,
     setup() {
-
         return () => (
             <Grid.Row gutter={16}>
                 <Grid.Col flex="300px">
