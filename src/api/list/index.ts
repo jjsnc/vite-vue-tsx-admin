@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '@/utils/http'
 import type { Pagination } from '@/types/global'
 import type { ServiceRecord, PolicyQuery, PolicyListRes, PolicyRecord } from './type'
 export type { ServiceRecord, PolicyQuery, PolicyListRes, PolicyRecord }
