@@ -13,5 +13,5 @@ export type OKResponse = 'ok'
 export type Pagination = {
   current: number
   pageSize: number
-  total: number
+  total?: number
 }
