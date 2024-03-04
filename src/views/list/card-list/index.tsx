@@ -4,6 +4,7 @@ import { Card, Input, Tabs, Typography } from '@arco-design/web-vue'
 import { useI18n } from 'vue-i18n'
 import QualityInspection from './QualityInspection'
 import TheService from './TheService'
+import RulesPreset from './RulesPreset'
 export const itemSpan = {
     xs: 12,
     sm: 12,
@@ -24,6 +25,7 @@ export default defineComponent({
                     <>
                         <QualityInspection />
                         <TheService></TheService>
+                        <RulesPreset></RulesPreset>
                     </>
                 )
             },
@@ -42,7 +44,7 @@ export default defineComponent({
                 value: 3,
                 pane: (
                     <>
-                        <div>123</div>
+                        <TheService />
                     </>
                 )
             },
@@ -51,7 +53,7 @@ export default defineComponent({
                 value: 4,
                 pane: (
                     <>
-                        <div>123</div>
+                        <RulesPreset />
                     </>
                 )
             }
