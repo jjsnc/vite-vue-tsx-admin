@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '@/utils/http'
 import type { ProfileBasicRes, operationLogRes } from './type'
 export type { ProfileBasicRes, operationLogRes }
 export function queryOperationLog() {
