@@ -1,8 +1,10 @@
 import { defineComponent, h } from "vue";
 import { Card, Grid, Tabs } from '@arco-design/web-vue'
+import { useI18n } from 'vue-i18n'
 import UserPanel from './UserPanel'
 import BasicInformation from './BasicInformation'
-import { useI18n } from 'vue-i18n'
+import SecuritySettings from "./SecuritySettings";
+
 export default defineComponent({
     name: '',
     setup() {
@@ -15,7 +17,7 @@ export default defineComponent({
             },
             {
                 key: '2',
-                component: '',
+                component: SecuritySettings,
                 getTitle: () => t('userSetting.tab.securitySettings')
             },
             {
