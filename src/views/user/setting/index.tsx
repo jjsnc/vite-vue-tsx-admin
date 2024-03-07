@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import UserPanel from './UserPanel'
 import BasicInformation from './BasicInformation'
 import SecuritySettings from "./SecuritySettings";
-
+import Certification from "./Certification";
 export default defineComponent({
     name: '',
     setup() {
@@ -22,7 +22,7 @@ export default defineComponent({
             },
             {
                 key: '3',
-                component: '',
+                component: Certification,
                 getTitle: () => t('userSetting.tab.certification')
             }
         ]
